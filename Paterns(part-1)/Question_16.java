@@ -4,8 +4,15 @@ public class Question_16 {
             for (int j = 0; j < 4 - i - 1; j++) {
                 System.out.print(" ");
             }
-            for (char k = 'c'; k < 2 * i + 2; k++) {
-                System.out.print(k);
+            char ch = 'A';
+            int breakpoint = (2*i+1)/2;
+            for (int k = 0; k < 2 * i + 1; k++) {
+                System.out.print(ch);
+                if (k < breakpoint) {
+                    ch++;
+                } else {
+                    ch--;
+                }
             }
             for (int j = 0; j < 4 - i - 1; j++) {
                 System.out.print(" ");
