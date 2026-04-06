@@ -1,6 +1,6 @@
 public class Question_19 {
     public static void main(String[] args) {
-        int n = 6;
+        int n = 5;
         int spaces = 2 * n - 2;
         for(int i =1; i<=2*n-1; i++) {
             int stars = i;
