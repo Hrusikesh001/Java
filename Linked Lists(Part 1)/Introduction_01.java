@@ -8,7 +8,10 @@ public class Introduction_01 {
             this.next = null;
         }
     }
-    public static void main(String args[]) {
+    public static Node head;
+    public static Node tail;
 
+    public static void main(String args[]) {
+        LinkedList ll = new LinkedList();
     }
 }
