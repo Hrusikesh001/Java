@@ -36,11 +36,29 @@ public class Introduction_01 {
         tail = newNode;
     }
 
+    public static void print() {
+        if(head == null) {
+            System.out.println("Linked List is empty");
+            return;
+        }
+        Node temp = head;
+        while(temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+
     public static void main(String args[]) {
         Introduction_01 ll = new Introduction_01();
+        ll.print();
         ll.addFirst(2);
+        ll.print();
         ll.addFirst(1);
+        ll.print();
         ll.addLast(3);
+        ll.print();
         ll.addLast(4);
+        ll.print();
     }
 }
