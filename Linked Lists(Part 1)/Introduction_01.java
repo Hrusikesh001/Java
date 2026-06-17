@@ -71,6 +71,22 @@ public class Introduction_01 {
         temp.next = newNode;
     }
 
+    public static int removeFirst() {
+        if(size == 0) {
+            System.out.println("Linked List is empty");
+            return Integer.MIN_VALUE;
+        } else if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
+
     public static void main(String args[]) {
         Introduction_01 ll = new Introduction_01();
         ll.addFirst(2);
@@ -79,6 +95,8 @@ public class Introduction_01 {
         ll.addLast(5);
         ll.add(2, 3);
         ll.print();
-        System.out.println(ll.size);
+        //System.out.println(ll.size);
+        ll.removeFirst();
+        ll.print();
     }
 }
