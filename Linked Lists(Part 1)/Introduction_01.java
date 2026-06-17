@@ -49,6 +49,23 @@ public class Introduction_01 {
         System.out.println("null");
     }
 
+    //Add in the middle
+    public void add(int index, int data) {
+        if(index == 0) {
+            addFirst(data);
+            return;
+        }
+        Node newNode = new Node(data);
+        Node temp = head;
+        int i = 0;
+        while(i < index - 1) {
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
     public static void main(String args[]) {
         Introduction_01 ll = new Introduction_01();
         ll.print();
@@ -59,6 +76,7 @@ public class Introduction_01 {
         ll.addLast(3);
         ll.print();
         ll.addLast(4);
+        ll.add(2, 9);
         ll.print();
     }
 }
