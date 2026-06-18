@@ -156,6 +156,28 @@ public class Introduction_01 {
         head = prev;
     }
 
+    public void deleteNthFromEnd(int n) {
+        // calculate size
+        int sz = 0;
+        Node temp = head;
+        while(temp != null) {
+            temp = temp.next;
+            sz++;
+        }
+        if(n == sz) {
+            head = head.next; // remove first
+            return;
+        }
+        int i = 1;
+        int iToFind = sz - n;
+        Node prev = head;
+        while(i < iToFind) {
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+    }
+
     public static void main(String args[]) {
         Introduction_01 ll = new Introduction_01();
         ll.addFirst(2);
@@ -174,7 +196,9 @@ public class Introduction_01 {
 
         // System.out.println(ll.recSearch(3));
         // System.out.println(ll.recSearch(10));
-        ll.reverse();
+        // ll.reverse();
+        // ll.print();
+        ll.deleteNthFromEnd(3);
         ll.print();
     }
 }
