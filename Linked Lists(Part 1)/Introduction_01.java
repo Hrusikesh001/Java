@@ -123,6 +123,7 @@ public class Introduction_01 {
         return -1;
     }
 
+    //Recursive
     public int helper(Node head, int key) {
         if(head == null) {
             return -1;
@@ -141,6 +142,20 @@ public class Introduction_01 {
         return helper(head, key);
     }
 
+    public void reverse() {
+        Node prev = null;
+        Node curr = tail = head;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
+
     public static void main(String args[]) {
         Introduction_01 ll = new Introduction_01();
         ll.addFirst(2);
@@ -150,14 +165,16 @@ public class Introduction_01 {
         ll.add(2, 3);
         ll.print();
         //System.out.println(ll.size);
-        ll.removeFirst();
-        ll.print();
+        // ll.removeFirst();
+        // ll.print();
 
-        ll.removeLast();
-        ll.print();
-        System.out.println(ll.size);
+        // ll.removeLast();
+        // ll.print();
+        // System.out.println(ll.size);
 
-        System.out.println(ll.recSearch(3));
-        System.out.println(ll.recSearch(10));
+        // System.out.println(ll.recSearch(3));
+        // System.out.println(ll.recSearch(10));
+        ll.reverse();
+        ll.print();
     }
 }
