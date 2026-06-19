@@ -39,7 +39,20 @@ public class Doubly_Linked_list_05 {
         System.out.println("null");
     }
 
-    //remove - removeLast
+    //addLast
+    public void addLast(int data) {
+        Node newNode = new Node(data);
+        size++;
+        if(head == null) {
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
+    }
+
+    //remove - removeFirst
     public int removeFirst() {
         if(head == null) {
             System.out.println("Linked List is empty");
@@ -54,6 +67,25 @@ public class Doubly_Linked_list_05 {
         int val = head.data;
         head = head.next;
         head.prev = null;
+        size --;
+        return val;
+    }
+
+    //remove - removeLast
+    public int removeLast() {
+        if(head == null) {
+            System.out.println("Linked List is empty");
+            return Integer.MIN_VALUE;
+        } 
+        if(size == 1) {
+            int val = head.data;
+            head = tail = null;
+            size --;
+            return val;
+        }
+        int val = tail.data;
+        tail = tail.prev;
+        tail.next = null;
         size --;
         return val;
     }
