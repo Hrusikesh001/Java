@@ -90,6 +90,22 @@ public class Doubly_Linked_list_05 {
         return val;
     }
 
+    //reverse
+    public void reverse() {
+        Node curr = head;
+        Node prev = null;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            curr.prev = next;
+            prev = curr;
+            curr = next;
+        }
+        tail = head;
+        head = prev;
+    }
     public static void main(String[] args) {
         Doubly_Linked_list_05 dll = new Doubly_Linked_list_05();
         dll.addFirst(3);
@@ -97,10 +113,12 @@ public class Doubly_Linked_list_05 {
         dll.addFirst(1);
 
         dll.print();
-        System.out.println(size);
+        // System.out.println(size);
 
-        dll.removeFirst();
+        // dll.removeFirst();
+        // dll.print();
+        // System.out.println(size);
+        dll.reverse();
         dll.print();
-        System.out.println(size);
     }
 }
