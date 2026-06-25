@@ -2,20 +2,19 @@
 import java.util.*;
 public class N_Meeting_in_One_Room_03 {
     public static int maxMeetings(int[] start, int[] end, int n) {
-        // Create a list of meetings
+        
         List<Meeting> meetings = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             meetings.add(new Meeting(start[i], end[i], i + 1));
         }
 
-        // Sort meetings by their ending times
         Collections.sort(meetings, (a, b) -> a.end - b.end);
 
         // Select the first meeting
         int count = 1;
         int lastEndTime = meetings.get(0).end;
 
-        // Iterate through the sorted meetings
+
         for (int i = 1; i < n; i++) {
             if (meetings.get(i).start > lastEndTime) {
                 count++;
@@ -25,7 +24,7 @@ public class N_Meeting_in_One_Room_03 {
         return count;
     }
 
-    // Helper class to store meeting details
+
     static class Meeting {
         int start;
         int end;
