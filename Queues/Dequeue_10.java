@@ -9,5 +9,7 @@ public class Dequeue_10 {
         System.out.println(dq);
         dq.removeFirst();
         System.out.println(dq);
+        System.out.println("first element: " + dq.getFirst());
+        System.out.println("last element: " + dq.getLast());
     }
 }
