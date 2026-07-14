@@ -7,11 +7,13 @@ public class Remove_the_hep_03 {
             arr.add(data);
             int x = arr.size() - 1; // child index
             int par = (x - 1) / 2; // parent index
-            while (arr.get(x) < arr.get(par)) {
+            while (arr.get(x) > arr.get(par)) {
                 // swap
                 int temp = arr.get(x);
                 arr.set(x, arr.get(par));
                 arr.set(par, temp);
+                x = par;
+                par = (x - 1) / 2;
             }
         }
         
@@ -22,19 +24,19 @@ public class Remove_the_hep_03 {
         private void heapify(int i) {
             int left = 2 * i + 1;
             int right = 2 * i + 2;
-            int minIdx = i;
-            if (left < arr.size() && arr.get(minIdx) > arr.get(left)) {
-                minIdx = left;
+            int maxIdx = i;
+            if (left < arr.size() && arr.get(maxIdx) < arr.get(left)) {
+                maxIdx = left;
             }
-            if (right < arr.size() && arr.get(minIdx) > arr.get(right)) {
-                minIdx = right;
+            if (right < arr.size() && arr.get(maxIdx) < arr.get(right)) {
+                maxIdx = right;
             }
-            if (minIdx != i) {
+            if (maxIdx != i) {
                 // swap
                 int temp = arr.get(i);
-                arr.set(i, arr.get(minIdx));
-                arr.set(minIdx, temp);
-                heapify(minIdx);
+                arr.set(i, arr.get(maxIdx));
+                arr.set(maxIdx, temp);
+                heapify(maxIdx);
             }
         }
 
