@@ -13,6 +13,10 @@ public class Insert_in_heap_02 {
                 arr.set(par, temp);
             }
         }
+        
+        public int peek() {
+            return arr.get(0);
+        }
     }
     public static void main(String[] args) {
 
