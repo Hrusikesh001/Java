@@ -15,5 +15,9 @@ public class HashMap_operation_01 {
         System.out.println(population);
 
         System.out.println(map.get("Nepal"));
+
+        //Contains Key - 0(1)
+        System.out.println(map.containsKey("India"));
+        System.out.println(map.containsKey("Nepal"));
     }
 }
