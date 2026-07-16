@@ -23,5 +23,14 @@ public class HashMap_operation_01 {
         //Remove
         System.out.println(map.remove("China"));
         System.out.println(map);
+
+        //Size
+        System.out.println(map.size());
+
+        //Is Empty
+        map.clear();
+        System.out.println(map.isEmpty());
+
+
     }
 }
