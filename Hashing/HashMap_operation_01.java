@@ -9,5 +9,11 @@ public class HashMap_operation_01 {
         map.put("USA", 300);
 
         System.out.println(map);
+
+        //Get - 0(1)
+        int population = map.get("India");
+        System.out.println(population);
+
+        System.out.println(map.get("Nepal"));
     }
 }
