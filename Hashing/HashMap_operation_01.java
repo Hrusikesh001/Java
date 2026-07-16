@@ -11,13 +11,17 @@ public class HashMap_operation_01 {
         System.out.println(map);
 
         //Get - 0(1)
-        int population = map.get("India");
-        System.out.println(population);
+        // int population = map.get("India");
+        // System.out.println(population);
 
-        System.out.println(map.get("Nepal"));
+        // System.out.println(map.get("Nepal"));
 
-        //Contains Key - 0(1)
-        System.out.println(map.containsKey("India"));
-        System.out.println(map.containsKey("Nepal"));
+        // //Contains Key - 0(1)
+        // System.out.println(map.containsKey("India"));
+        // System.out.println(map.containsKey("Nepal"));
+
+        //Remove
+        System.out.println(map.remove("China"));
+        System.out.println(map);
     }
 }
